@@ -1,7 +1,7 @@
 export default async function WeatherFetch(time, date, nx, ny) {
   const ApiKey = process.env.G_API_KEY;
   const url =
-    "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst"; /*URL*/
+    "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst"; /*URL*/
 
   var queryParams =
     "?" + encodeURIComponent("serviceKey") + "=" + `${ApiKey}`; /*Service Key*/
