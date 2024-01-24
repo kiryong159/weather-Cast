@@ -12,6 +12,7 @@ export default async function WeatherFetch(time, date, nx, ny) {
     encodeURIComponent("1"); /*페이지 수*/
   queryParams +=
     "&" +
+    encodeURIComponent("numOfRows") +
     "=" +
     encodeURIComponent("1000"); /*한페이지 결과*/
   queryParams +=
