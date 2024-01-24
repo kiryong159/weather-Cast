@@ -1,4 +1,6 @@
 export default async function WeatherFetch(time, date, nx, ny) {
+  const dotenv = require("dotenv");
+  dotenv.config();
   const ApiKey = process.env.G_API_KEY;
   const url =
     "https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst"; /*URL*/
