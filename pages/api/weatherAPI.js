@@ -43,7 +43,10 @@ export default async function WeatherFetch(time, date, nx, ny) {
     "=" +
     encodeURIComponent(ny); /*가로(위도)*/
 
-  const result = await fetch(url + queryParams, { method: "GET" })
+  const result = await fetch(url + queryParams, {
+    headers: { Accept: "application / json" },
+    method: "GET",
+  })
     .then((r) => r.json())
     .then((r) => {
       return r.response.body.items.item;

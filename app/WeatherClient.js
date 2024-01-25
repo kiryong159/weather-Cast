@@ -156,7 +156,7 @@ export default function WeatherClient() {
   };
 
   return (
-    <div className="w-[320px] lg:w-[1024px] mx-auto flex flex-col justify-center items-center space-y-5 mt-[70px] overflow-x-hidden">
+    <div className="w-[320px] 3sm:w-[360px] lg:w-[1024px] mx-auto flex flex-col justify-center items-center space-y-5 mt-[70px] overflow-x-hidden">
       <h1 className="text-center text-4xl font-bold">초단기 예보 조회</h1>
       <div className="w-[308px] lg:w-[900px] grid grid-cols-2 gap-5">
         <div className="py-3 px-4 flex flex-col items-center space-y-2 bg-green-50 rounded-md shadow-md font-bold">
@@ -186,9 +186,17 @@ export default function WeatherClient() {
           className="p-4 bg-blue-50 rounded-md shadow-md font-bold "
           onClick={onClick}
         >
-          접속위치 로 정보받기
+          <span>내 주변 날씨 </span>
         </button>
       </div>
+
+      {data.length !== 0 ? null : (
+        <div className="px-5 py-1">
+          <span className="text-[10px] text-gray-400">
+            페이지가 작동하지 않을시 새로고침후 재시도 해주세요.
+          </span>
+        </div>
+      )}
 
       <div className="bg-blue-50">
         {data.length !== 0 ? (
@@ -204,7 +212,7 @@ export default function WeatherClient() {
               </h1>
             </div>
             {/* 시간 */}
-            <div className="w-[308px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center font-bold">
+            <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center font-bold">
               <div className="text-[13px] lg:text-[16px]">시간</div>
               {강수형태.map((item, index) => (
                 <div className="text-[13px] lg:text-[19px]" key={index}>
@@ -213,7 +221,7 @@ export default function WeatherClient() {
               ))}
             </div>
             {/* 강수 형태 */}
-            <div className="w-[308px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
+            <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
               <div className="font-bold text-[13px] lg:text-[16px]">강수</div>
               {강수형태.map((item, index) => (
                 <div key={index}>
@@ -236,7 +244,7 @@ export default function WeatherClient() {
               ))}
             </div>
             {/* 하늘 상태 */}
-            <div className="w-[308px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
+            <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
               <div className="font-bold text-[13px] lg:text-[16px]">하늘</div>
               {하늘상태.map((item, index) => (
                 <div key={index}>
@@ -251,7 +259,7 @@ export default function WeatherClient() {
               ))}
             </div>
             {/* 기온 */}
-            <div className="w-[308px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center ">
+            <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center ">
               <div className="font-bold text-[13px] lg:text-[16px] h-[25px] lg:h-[50px] flex justify-center items-center">
                 기온
               </div>
@@ -274,7 +282,7 @@ export default function WeatherClient() {
               )}
             </div>
             {/* 습도 */}
-            <div className="w-[308px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center">
+            <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center">
               <div className="font-bold text-[13px] lg:text-[16px] h-[25px] lg:h-[50px] flex justify-center items-center">
                 습도
               </div>
@@ -285,7 +293,7 @@ export default function WeatherClient() {
               ))}
             </div>
             {/* 풍향 */}
-            <div className="w-[308px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
+            <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
               <div className="font-bold text-[13px] lg:text-[16px]">풍향</div>
               {풍향.map((item, index) => {
                 const TransValue = Math.floor(
@@ -332,7 +340,7 @@ export default function WeatherClient() {
               })}
             </div>
             {/* 풍속 */}
-            <div className="w-[308px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center">
+            <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center">
               <div className="font-bold text-[13px] lg:text-[16px] h-[25px] lg:h-[50px] flex justify-center items-center">
                 풍속
               </div>
