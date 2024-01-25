@@ -11,7 +11,7 @@ export default function Wind({ Rotate, Name }) {
         >
           <path d="M 0 0 L 4 -11 L 8 0 L 4 -3 L 0 0 Z" fill="#000000" />
         </svg>
-        <span className="text-[12px] lg:text-[18px] whitespace-pre">
+        <span className="text-[14px] lg:text-[20px] whitespace-pre">
           {Name}
         </span>
       </div>

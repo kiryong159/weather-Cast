@@ -10,10 +10,10 @@ export default function Rain({ imgName, Name }) {
         className={`${
           String(Name.length) >= 3
             ? String(Name.length) >= 5
-              ? "text-[10px]"
-              : "text-[12px]"
-            : "text-[13px]"
-        }  lg:text-[16px] `}
+              ? "text-[12px]"
+              : "text-[14px]"
+            : "text-[15px]"
+        }  lg:text-[22px] `}
       >
         {Name}
       </span>

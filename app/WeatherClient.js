@@ -205,24 +205,24 @@ export default function WeatherClient() {
             <div className="w-full flex justify-center items-center p-2">
               <h1
                 className={`${
-                  location.length > 10 ? "text-[15px]" : "text-[25px]"
-                } lg:text-[45px] font-bold`}
+                  location.length > 10 ? "text-[18px]" : "text-[28px]"
+                } lg:text-[48px] font-bold`}
               >
                 {location} 의 예보
               </h1>
             </div>
             {/* 시간 */}
             <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center font-bold">
-              <div className="text-[13px] lg:text-[16px]">시간</div>
+              <div className="text-[16px] lg:text-[25px]">시간</div>
               {강수형태.map((item, index) => (
-                <div className="text-[13px] lg:text-[19px]" key={index}>
+                <div className="text-[16px] lg:text-[25px]" key={index}>
                   {String(item.fcstTime).substring(0, 2)}시
                 </div>
               ))}
             </div>
             {/* 강수 형태 */}
             <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
-              <div className="font-bold text-[13px] lg:text-[16px]">강수</div>
+              <div className="font-bold text-[16px] lg:text-[25px]">강수</div>
               {강수형태.map((item, index) => (
                 <div key={index}>
                   {item.fcstValue === "0" ? (
@@ -245,7 +245,7 @@ export default function WeatherClient() {
             </div>
             {/* 하늘 상태 */}
             <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
-              <div className="font-bold text-[13px] lg:text-[16px]">하늘</div>
+              <div className="font-bold text-[16px] lg:text-[25px]">하늘</div>
               {하늘상태.map((item, index) => (
                 <div key={index}>
                   {item.fcstValue === "1" ? (
@@ -260,21 +260,21 @@ export default function WeatherClient() {
             </div>
             {/* 기온 */}
             <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center ">
-              <div className="font-bold text-[13px] lg:text-[16px] h-[25px] lg:h-[50px] flex justify-center items-center">
+              <div className="font-bold text-[16px] lg:text-[25px] h-[25px] lg:h-[50px] flex justify-center items-center">
                 기온
               </div>
               {기온.map((item, index) =>
                 item.fcstValue > 0 ? (
                   <div
                     key={index}
-                    className="text-red-400 text-[13px] lg:text-[19px] my-auto"
+                    className="text-red-400 text-[16px] lg:text-[22px] my-auto"
                   >
                     {item.fcstValue}℃
                   </div>
                 ) : (
                   <div
                     key={index}
-                    className="text-blue-500 text-[13px] lg:text-[19px] my-auto"
+                    className="text-blue-500 text-[16px] lg:text-[22px] my-auto"
                   >
                     {item.fcstValue}℃
                   </div>
@@ -283,18 +283,18 @@ export default function WeatherClient() {
             </div>
             {/* 습도 */}
             <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center">
-              <div className="font-bold text-[13px] lg:text-[16px] h-[25px] lg:h-[50px] flex justify-center items-center">
+              <div className="font-bold text-[16px] lg:text-[25px] h-[25px] lg:h-[50px] flex justify-center items-center">
                 습도
               </div>
               {습도.map((item, index) => (
-                <div key={index} className="text-[13px] lg:text-[19px] my-auto">
+                <div key={index} className="text-[16px] lg:text-[22px] my-auto">
                   {item.fcstValue}%
                 </div>
               ))}
             </div>
             {/* 풍향 */}
             <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center items-center">
-              <div className="font-bold text-[13px] lg:text-[16px]">풍향</div>
+              <div className="font-bold text-[16px] lg:text-[22px]">풍향</div>
               {풍향.map((item, index) => {
                 const TransValue = Math.floor(
                   (Number(item.fcstValue) + 11.25) / 22.5
@@ -341,11 +341,11 @@ export default function WeatherClient() {
             </div>
             {/* 풍속 */}
             <div className="w-[308px] 3sm:w-[360px] lg:w-[900px] grid grid-cols-7 gap-2 lg:gap-5 text-center">
-              <div className="font-bold text-[13px] lg:text-[16px] h-[25px] lg:h-[50px] flex justify-center items-center">
+              <div className="font-bold text-[16px] lg:text-[22px] h-[25px] lg:h-[50px] flex justify-center items-center">
                 풍속
               </div>
               {풍속.map((item, index) => (
-                <div key={index} className="text-[13px] lg:text-[16px] my-auto">
+                <div key={index} className="text-[16px] lg:text-[22px] my-auto">
                   {item.fcstValue}m/s
                 </div>
               ))}

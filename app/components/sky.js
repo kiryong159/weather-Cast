@@ -6,7 +6,7 @@ export default function Sky({ imgName, Name }) {
         src={`/image/${imgName}.svg`}
         alt={`${imgName}`}
       />
-      <span className="text-[13px] lg:text-[16px]">{Name}</span>
+      <span className="text-[16px] lg:text-[22px]">{Name}</span>
     </div>
   );
 }
