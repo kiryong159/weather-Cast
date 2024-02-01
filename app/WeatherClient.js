@@ -10,6 +10,7 @@ import Wind from "./components/wind";
 export default function WeatherClient() {
   const [data, setData] = useState([]);
   const [location, setLocation] = useState("");
+  const [onLoading, setOnLoading] = useState(false);
 
   /*   console.log("강수형태", data.slice(6, 12));
   console.log("하늘 상태", data.slice(18, 24));
@@ -45,6 +46,7 @@ export default function WeatherClient() {
 
   async function onChange(e) {
     setData([]);
+    setOnLoading(true);
     const value = e.target.value;
     setLocation(value);
     if (value === "none") {
@@ -135,10 +137,12 @@ export default function WeatherClient() {
         setData(r)
       );
     }
+    setOnLoading(false);
   }
 
   const onClick = () => {
     setData([]);
+    setOnLoading(true);
 
     navigator.geolocation.getCurrentPosition((position) => {
       const select = document.querySelector("select");
@@ -149,8 +153,9 @@ export default function WeatherClient() {
       const roundLati = Math.round(latitude * 100) / 100;
       const roundLongi = Math.round(longitude * 100) / 100;
       setLocation(`경도 : ${roundLongi} , 위도 : ${roundLati}`);
-      const 현재 = WeatherFetch(time, combineDate, XY.x, XY.y).then((r) =>
-        setData(r)
+      const 현재 = WeatherFetch(time, combineDate, XY.x, XY.y).then(
+        (r) => setData(r),
+        setOnLoading(false)
       );
     });
   };
@@ -350,6 +355,11 @@ export default function WeatherClient() {
                 </div>
               ))}
             </div>
+          </div>
+        ) : onLoading ? (
+          <div className="bg-white flex items-center space-x-5 p-3">
+            <span>정보를 받아 오는중...</span>
+            <span className="loader" />
           </div>
         ) : null}
       </div>
